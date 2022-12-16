@@ -1,0 +1,27 @@
+{
+    "name": "rashidhamidov/model-form",
+    "description": "Dynamic Model Form for crate form automaticaly from model fields",
+    "type": "package",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "RashidHamidov\\ModelForm\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rashid Hamidov"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "laravel/framework":"^9.19"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "RashidHamidov\\ModelForm\\ModelFormServiceProvider"
+            ]
+        }
+    }
+}
