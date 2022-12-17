@@ -3,7 +3,9 @@
 This is package is for create dynamic crud forms for model.
 
 * **Laravel 9** is supported
-
+```
+composer require rashidhamidov/model-form
+```
 This avantages is
 
 - Create Dynamic Forms from Model file with one function
@@ -67,8 +69,7 @@ protected function formFields()
     }
 ```
 
-There is three type of element and full type of this elements in form. You can set className into array and required
-true or false.
+There are three type of elements and full type of those elements in form. You can also set className into array and required fields.
 In select filed you have to set array into array that values in it.
 
 ### Call Form Function
@@ -77,7 +78,7 @@ In select filed you have to set array into array that values in it.
 $model = new Product();
 ```
 
-Into your blade file *form()* function returns a views that composer form of Model.
+Into your blade file *form()* function returns a views that comprise form of Model.
 
 ```php
 {{$model->form()}}
