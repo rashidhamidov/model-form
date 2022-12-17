@@ -2,6 +2,7 @@
     "name": "rashidhamidov/model-form",
     "description": "Dynamic Model Form for crate form automaticaly from model fields",
     "type": "package",
+    "keywords": ["laravel", "model-form", "form-rule", "dynamic-form", "crud-form"],
     "license": "MIT",
     "autoload": {
         "psr-4": {
@@ -10,7 +11,8 @@
     },
     "authors": [
         {
-            "name": "Rashid Hamidov"
+            "name": "Rashid Hamidov",
+            "email": "resid.hemidov.2014@gmail.com"
         }
     ],
     "require": {
