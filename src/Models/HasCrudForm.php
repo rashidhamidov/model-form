@@ -95,6 +95,28 @@ trait HasCrudForm
         ];
     }
 
+    protected function setForeignField(
+        string $foreignKey,
+        string $foreignName,
+        string $name = null,
+        string $className = null,
+        string $required = null,
+        string $defaultValue = null,
+        array  $foreignOptions = [],
+    )
+    {
+        return [
+            "element" => "foreign",
+            "name" => $name,
+            "className" => $className,
+            "required" => $required,
+            "defaultValue" => $defaultValue,
+            "foreignOptions" => $foreignOptions,
+            "foreignKey" => $foreignKey,
+            "foreignName" => $foreignName,
+        ];
+    }
+
     /**
      * @return mixed
      * must return any string value
