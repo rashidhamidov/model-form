@@ -31,7 +31,7 @@ you set root name as product the form action will be route with names:
 </p>
 
 * product.store
-* product.update(id)
+* product.update
 
 It automaticaly get the model data id from your send with form function
 
@@ -58,13 +58,13 @@ protected function formFields()
     {
         return [
             "name" => $this->setInputField('name', 'text', 'form-control', true, ''),
-            "gender" => $this->setInputField('gender', 'radio', 'form-control', true, '', ["male" => 'Male', "female" => "Female"]),
-            "phone" => $this->setInputField('phone', 'text', 'form-control phone-mask', true, ''),
-            "detail" => $this->setTextAreaField('detail', 'form-control richtext', true, ''),
-            "status" => $this->setSelectField('status', 'form-control', true, '', ['True', 'False']),
-            "date" => $this->setInputField('date', 'date', 'form-control', true, ''),
-            "time" => $this->setInputField('time', 'time', 'form-control', true, ''),
-
+            "gender" => $this->setInputField('gender', 'radio', 'form-control', true, '', ["Male" => 'male', "Female" => "female"]),
+            "phone" => $this->setInputField('phone', 'text', 'form-control phone-mask', false, ''),
+            "detail" => $this->setTextAreaField('detail', 'form-control richtext', false, ''),
+            "status" => $this->setSelectField('status', 'form-control', true, '', ['True'=>1, 'False'=>0]),
+            "user" => $this->setForeignField('id','email','user_id', 'form-control', true, '', User::all()->toArray()),
+            "date" => $this->setInputField('date', 'date', 'form-control', false, ''),
+            "time" => $this->setInputField('time', 'time', 'form-control', false, ''),
         ];
     }
 ```
@@ -82,6 +82,26 @@ Into your blade file *form()* function returns a views that comprise form of Mod
 
 ```php
 {{$model->form()}}
+```
+
+For Model Update Form you have to send model as variable 
+which you
+want to change.
+
+```php
+$model = Product::find($id);
+$model->form($model);
+```
+Before use *form()* function you have to define in your
+web.php file Model Controller Route resource or store and update
+routes  for store and
+update routes
+
+```php
+Route::resource('product',ProductController::class);
+//or
+Route::post('/product',[ProductController::class,'store'])->name('product.store')
+Route::put('/product/{product}',[ProductController::class,'update'])->name('product.store')
 ```
 
 ### Rules Usage
