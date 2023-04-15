@@ -2,7 +2,7 @@
 
 This is package is for create dynamic crud forms for model.
 
-* **Laravel 9** is supported
+* **Laravel 8** is supported
 ```
 composer require rashidhamidov/model-form
 ```

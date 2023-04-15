@@ -1,11 +1,11 @@
 <form
-    @if(!$data)
-        action="{{route($route_name.'.store')}}"
-    @else
-        action="{{route($route_name.'.update',['product'=>$data->id])}}"
-    @endif
-    enctype="multipart/form-data"
-    method="post">
+        @if(!$data)
+            action="{{route($route_name.'.store')}}"
+        @else
+            action="{{route($route_name.'.update',['product'=>$data->id])}}"
+        @endif
+        enctype="multipart/form-data"
+        method="post">
     @if($data)
         @method('PUT')
     @endif
@@ -18,6 +18,11 @@
                     @include('model-form::components.input.checkbox')
                 @elseif($field["type"]=="radio")
                     @include('model-form::components.input.radio')
+                @elseif($field["type"]=="file")
+                    @include('model-form::components.input.file')
+                    @if($data)
+                        <img class="w-50" src="{{$field["defaultValue"]}}">
+                    @endif
                 @else
                     @include('model-form::components.input.text')
                 @endif
