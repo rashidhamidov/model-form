@@ -2,7 +2,7 @@
         @if(!$data)
             action="{{route($route_name.'.store')}}"
         @else
-            action="{{route($route_name.'.update',['product'=>$data->id])}}"
+            action="{{route($route_name.'.update',['id'=>$data->id])}}"
         @endif
         enctype="multipart/form-data"
         method="post">
