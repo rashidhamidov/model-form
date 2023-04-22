@@ -12,8 +12,8 @@
     @csrf
     @foreach($fields as $name=>$field)
         @if($field["element"]=="input")
-            <div class="mb-3">
-                <label for="id_{{$field["name"]}}" class="form-label text-capitalize">@lang($name)</label>
+            <div class="col-md-6 mb-3">
+                <label for="id_{{$field["name"]}}" class="form-label text-capitalize">@lang("form.".$name)</label>
                 @if($field["type"]=="checkbox")
                     @include('model-form::components.input.checkbox')
                 @elseif($field["type"]=="radio")
@@ -21,7 +21,11 @@
                 @elseif($field["type"]=="file")
                     @include('model-form::components.input.file')
                     @if($data)
-                        <img class="w-50" src="{{$field["defaultValue"]}}">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img class="w-50" src="{{$field["defaultValue"]}}">
+                            </div>
+                        </div>
                     @endif
                 @else
                     @include('model-form::components.input.text')
@@ -30,11 +34,14 @@
                 <span class="text-danger">{{$message}}</span>
                 @enderror
             </div>
-        @elseif($field["element"]=="textarea")
+        @endif
+        @if($field["element"]=="textarea")
             @include('model-form::components.textarea.textarea')
-        @elseif($field["element"]=="select")
+        @endif
+        @if($field["element"]=="select")
             @include('model-form::components.select.select')
-        @elseif($field["element"]=="foreign")
+        @endif
+        @if($field["element"]=="foreign")
             @include('model-form::components.select.foreign')
         @endif
 
