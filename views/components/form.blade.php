@@ -24,7 +24,7 @@
                             @if($data)
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <img class="w-50" src="{{$field["defaultValue"]}}">
+                                        <img class="w-100" src="{{$field["defaultValue"]}}">
                                     </div>
                                 </div>
                             @endif
