@@ -8,7 +8,7 @@
                     @if($field_value==$value)
                         selected
                     @endif
-                    value="{{$value}}">{{$key}}</option>
+                    value="{{$value}}">@lang($key)</option>
         @endforeach
     </select>
 </div>
