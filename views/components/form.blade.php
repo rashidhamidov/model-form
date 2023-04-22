@@ -22,7 +22,7 @@
                         @elseif($field["type"]=="file")
                             @include('model-form::components.input.file')
                             @if($data)
-                                <div class="row">
+                                <div class="row mt-2">
                                     <div class="col-md-3">
                                         <img class="w-100" src="{{$field["defaultValue"]}}">
                                     </div>
