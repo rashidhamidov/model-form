@@ -5,10 +5,7 @@
         <option value="">@lang('Choose')</option>
         @foreach($field['foreignOptions'] as $option)
             <option
-                    @if($data and $data[$field["name"]]==$option[$field["foreignKey"]])
-                        selected
-                    @endif
-                    @if(old($field["name"]) and old($field["name"]==$option[$field["foreignKey"]]))
+                    @if($field_value==$option[$field["foreignKey"]])
                         selected
                     @endif
                     value="{{$option[$field["foreignKey"]]}}">{{$option[$field["foreignName"]]}}</option>

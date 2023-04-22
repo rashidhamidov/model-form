@@ -2,5 +2,5 @@
     <label for="id_{{$field["name"]}}" class="form-label text-capitalize">@lang("form.".$name)</label>
     <textarea name="{{$field["name"]}}" id="id_{{$field["name"]}}" class="{{$field["className"]}}"
               @if($field["required"]) required @endif
-    >@if(old($field["name"])){{old($field["name"])}}@elseif($data){{$data[$field["name"]]}}@endif</textarea>
+    >{{$field_value}}</textarea>
 </div>
