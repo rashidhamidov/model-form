@@ -14,13 +14,13 @@
         @foreach($fields as $name=>$field)
                 <?php
                 $field_value = null;
-                if ($field["defaultValue"]) {
+                if ($field["defaultValue"] != null) {
                     $field_value = $field["defaultValue"];
                 }
-                if ($data) {
+                if ($data != null) {
                     $field_value = $data[$field["name"]];
                 }
-                if (old($field["name"])) {
+                if (old($field["name"]) != null) {
                     $field_value = old($field["name"]);
                 }
                 ?>
