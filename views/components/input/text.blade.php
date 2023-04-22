@@ -1,4 +1,5 @@
 <?php
+$field_value = null;
 if ($field["defaultValue"]) {
     $field_value = $field["defaultValue"];
 }
