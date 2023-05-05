@@ -178,7 +178,7 @@ trait HasCrudForm
      * @return Application|Factory|View
      * The model form view function return a view of form component. If update must send model as data
      */
-    public function form($data = null): array
+    public function form($data = null): View|Factory|Application
     {
         return view('model-form::components.form', [
             'data' => $data,
