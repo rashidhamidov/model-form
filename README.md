@@ -41,7 +41,13 @@ private function setRootName()
         return "product";
     }
     
-private function setRules()
+private function setRulesStore()
+    {
+        return [
+            'name'=>"required"
+        ];
+    } 
+private function setRulesUpdate()
     {
         return [
             'name'=>"required"
