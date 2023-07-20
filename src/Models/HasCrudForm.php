@@ -130,13 +130,13 @@ trait HasCrudForm
      * if you sign the route name product the form action will be
      * route('product.store') and route('product.update',['id'=>$data->id])
      */
-    abstract private function setRootName(): string;
+    abstract protected function setRootName(): string;
 
     /**
      * @return string
      * To get model form root name
      */
-    private function getRootName(): string
+    public function getRootName(): string
     {
         return $this->setRootName();
     }
@@ -146,13 +146,13 @@ trait HasCrudForm
      * @return array
      * To set rules of model when store request is send
      */
-    abstract private function setRulesStore(): array;
+    abstract protected function setRulesStore(): array;
 
     /**
      * @return array
      * To set rules of model when update request is send
      */
-    abstract private function setRulesUpdate(): array;
+    abstract protected function setRulesUpdate(): array;
 
     /**
      * @return array
