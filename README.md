@@ -3,14 +3,16 @@
 This is package is for create dynamic crud forms for model.
 
 * **Laravel 8** is supported
+
 ```
 composer require rashidhamidov/model-form
 ```
-This avantages is
+
+These advantages are
 
 - Create Dynamic Forms from Model file with one function
 - Create Rules in Model file with one function
-- Automaticaly Creates Forms which you want
+- Automatically Creates Forms which you want
 - You can change the class names and can add more than one class name into form element
 
 #### Inserting Trait to Model
@@ -33,7 +35,7 @@ you set root name as product the form action will be route with names:
 * product.store
 * product.update
 
-It automaticaly get the model data id from your send with form function
+It automatically gets the model data id from your send with form function
 
 ```php
 private function setRootName()
@@ -75,7 +77,8 @@ protected function formFields()
     }
 ```
 
-There are three type of elements and full type of those elements in form. You can also set className into array and required fields.
+There are three type of elements and full type of those elements in form. You can also set className into array and
+required fields.
 In select filed you have to set array into array that values in it.
 
 ### Call Form Function
@@ -90,7 +93,7 @@ Into your blade file *form()* function returns a views that comprise form of Mod
 {{$model->form()}}
 ```
 
-For Model Update Form you have to send model as variable 
+For Model Update Form you have to send model as variable
 which you
 want to change.
 
@@ -98,9 +101,10 @@ want to change.
 $model = Product::find($id);
 $model->form($model);
 ```
+
 Before use *form()* function you have to define in your
 web.php file Model Controller Route resource or store and update
-routes  for store and
+routes for store and
 update routes
 
 ```php
